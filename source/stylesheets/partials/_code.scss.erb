@@ -1,0 +1,23 @@
+<%= Rouge::Themes::Base16::Solarized.render(:scope => '.highlight') %>
+
+.highlight {
+  td {
+    border: none;
+
+    &.gutter {
+      width: 5%;
+      // padding: 5px 8px;
+      text-align: center;
+      padding-top: 5px;
+      border-right: 1px solid #e5e5e5;
+    }
+
+    .lineno {
+      display: inline;
+    }
+  }
+
+  pre {
+    line-height: 2.1em;
+  }
+}

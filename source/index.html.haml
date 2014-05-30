@@ -1,0 +1,18 @@
+---
+layout: base
+---
+
+.hero
+  .hero-inner
+    .hero-copy
+      %h1 I'm Ryan Faerman
+      %p I code, compete, create, build, tinker, fix, play - anything that I find interesting.
+      %p I learn new things everyday as I strive to become a better person.
+
+#main{role: "main"}
+  - article = blog.articles.last 
+  %article
+    %h1= article.title
+    = article.body
+    %hr/
+    %p.author= lorem.name

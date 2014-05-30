@@ -1,0 +1,124 @@
+.hero {
+  $hero-background: desaturate(darken($base-accent-color, 20), 30); 
+  $hero-background-image: "http://www.ryanfaerman.com/assets/img/ryan_and_ayelet_green.png";
+  $hero-color: white;
+
+  background: url($hero-background-image);
+  background-color: $hero-background;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  
+  margin: -8px;
+  margin-bottom: 4em;
+  height: 700px;
+
+
+  .hero-inner {
+    @include clearfix;
+    padding: 2em;
+    color: $hero-color;
+    
+
+    button {
+      @include button(simple, $base-accent-color);
+      font-size: $base-font-size;
+      outline: none;
+    }
+
+    .hero-copy {
+      background: rgba(0,0,0,0.8);
+      padding: 2em;
+      margin-top: 200px;
+      border-radius: 5px;
+      min-width: 300px;
+
+       @include span-columns(5);
+      
+      h1 {
+        font-size: 1.4em;
+        margin-bottom: .2em;
+        font-family: $serif;
+
+        @include media($large-screen) {
+          font-size: 1.8em;
+        }
+      }
+
+      p {
+        font-weight: 200;
+        font-family: $serif-2;
+        @include media($large-screen) {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}
+
+// .hero {
+//   $hero-background-color: #0a1403;
+//   $hero-background: desaturate(darken($base-accent-color, 20), 30);
+  
+//   $hero-color: white;
+
+  
+//   background-color: $hero-background-color;
+  
+//   margin-bottom: 4em;
+//   margin: -8px;
+  
+
+
+//   .hero-inner {
+//     // @include outer-container;
+//       @include clearfix;
+//       height: 700px;
+
+//     background: url($hero-background-image);
+//     background-repeat: no-repeat;
+//     background-position: 50% 50%;
+//     background-size: 1200px 800px;
+//     @include clearfix;
+    
+//     // border-radius: 5px;
+
+//     .hero-copy {
+//       // @include outer-container;
+//       // @include clearfix;
+//       padding: 2em;
+//       margin-top: 180px;
+//       // // text-align: center;
+//       color: $hero-color;
+//       background: rgba(0,0,0,0.8);
+//       @include span-columns(5);
+//       @include shift(1);
+
+//       border-radius: 3px;
+
+//       // text-align: center;
+      
+//       h1 {
+//         font-size: 1.6em;
+//         margin-bottom: .2em;
+
+//         font-family: $serif;
+
+//         @include media($large-screen) {
+//           font-size: 2em;
+//         }
+//       }
+
+//       p {
+//         // margin: auto;
+//         // margin-bottom: 3em; 
+//         font-weight: 200;
+//         font-family: $serif-2;
+//         @include media($large-screen) {
+//           // font-size: 1.2em;
+//           // max-width: 40%;
+//         }
+//       }
+//     }
+//   }
+// }

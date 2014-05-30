@@ -1,0 +1,10 @@
+.headroom {
+  @include transition (all .25s ease-in-out);
+}
+.headroom--pinned {
+  @include transform(translateY(0%));
+}
+
+.headroom--unpinned {
+  @include transform(translateY(-100%));
+}

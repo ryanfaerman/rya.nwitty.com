@@ -1,0 +1,50 @@
+.header {
+  background: rgba(0, 0, 0, 0.8);
+  // line-height: 18px;
+  width: 100%;
+
+  
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  .header-inner {
+    @include outer-container;
+    @include clearfix;
+    height: 100%;
+
+    a {
+      color: #ddd;
+      display: inline-block;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    .brand {
+      font-family: $serif;
+      font-size: 1.8em;
+      padding: 5px 20px 5px;
+    }
+
+    .nav {
+      display: inline;
+      height: 100%;
+
+      &.external {
+        padding-top: 3px;
+      }
+
+      .nav-item {
+        display: inline-block;
+        height: 100%;
+        a {
+          font-family: $serif-2;
+          padding: 6px 5px 5px;
+        }
+      }
+    }
+  }
+}
