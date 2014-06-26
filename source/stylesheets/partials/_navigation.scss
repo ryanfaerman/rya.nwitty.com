@@ -33,16 +33,16 @@
       display: inline;
       height: 100%;
 
-      &.external {
-        padding-top: 3px;
-      }
-
       .nav-item {
         display: inline-block;
         height: 100%;
         a {
           font-family: $serif-2;
           padding: 6px 5px 5px;
+          i {
+            position: relative;
+            top: 2px;
+          }
         }
       }
     }

@@ -4,7 +4,7 @@
     %meta{charset: "utf-8"}/
     %meta{content: "IE=edge;chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %title
-      Blog Title#{' - ' + current_article.title unless current_article.nil?}
+      Ryan Faerman#{' - ' + current_article.title unless current_article.nil?}
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
     = google_font 'Lusitana', 400, 700
     = google_font 'Merriweather', 400,300, '300italic','400italic',700,'700italic','900','900italic'
@@ -15,22 +15,24 @@
     = stylesheet_link_tag :all
     = stylesheet_link_tag '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'
   %body
-    %header.header{role: 'banner'}
-      .header-inner
-        %a.brand{href: '#'} Ryan Faerman
-        %ul.nav
-          %li.nav-item
-            %a{href: '#'} notebook
-          %li.nav-item
-            %a{href: '#'} projects
-        %ul.nav.external.pull-right
-          %li.nav-item
-            %a{href: '#'}
-              %i.fa.fa-github-alt
-            %a{href: '#'}
-              %i.fa.fa-linkedin
+    = partial 'navigation'
 
-    = yield
+    #main{role: "main"}
+      %article
+        %h1= current_article.title
+        %aside.meta-data
+          %p.date= current_article.date.strftime('%b %d, %Y')
+          - unless current_article.tags.empty?
+            %ul.tags
+              = list_of current_article.tags.each do |tag|
+                &mdash;
+                = tag
+        = yield
+        %hr/
+        %p.author Ryan Faerman
+        
 
 = javascript_include_tag 'ready.min'
 = javascript_include_tag :main
+
+

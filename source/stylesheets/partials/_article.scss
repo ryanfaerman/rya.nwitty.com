@@ -1,6 +1,7 @@
 article {
   @include clearfix;
   text-align: left;
+  position: relative;
 
   .type {
     border-bottom: 1px solid;
@@ -60,6 +61,10 @@ article {
     font-size: .9em;
     margin-bottom: 1.5em;
 
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+
     span {
       font-family: $sans-serif;
       font-weight: 700;
@@ -109,5 +114,46 @@ article {
     font-style: italic;
   }
 
+  aside {
+    position: absolute;
+    left: -155px;
+    width: 155px;
+    font-size: 1.2em;
 
+    a {
+      color: inherit;
+      &:hover {
+        color: $hover-link-color;
+      }
+    }
+
+    .tags {
+      list-style-type: none;
+      font-size: 0.8em;
+      color: $medium-gray;
+      margin-left: 5px;
+    }
+  }
+
+}
+
+section#posts {
+  aside {
+    top: 5px;
+    font-size: 1.4em;
+  }
+
+  h1 {
+    font-size: 2em;
+    a {
+      color: inherit;
+      &:hover {
+        color: $hover-link-color;
+      }
+    }
+  }
+
+  article {
+    margin-bottom: 2em;
+  }
 }

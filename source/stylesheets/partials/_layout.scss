@@ -1,3 +1,46 @@
 #main {
     @include outer-container;
+    margin-top: 4em;
 }
+
+body.index header .home {
+  display: none;
+}
+
+#continued-posts {
+  margin-top: 4em;
+  padding-bottom: 2em;
+
+  h3 {
+    padding-bottom: 0.5em;
+    font-size: 1.4em;
+    i {
+      font-size: 0.8em;
+    }
+  }
+
+  .articles {
+    // list-style-type: decimal;
+    // @include outer-container;
+    @include clearfix;
+    list-style-type: circle;
+    list-style-position: inside;
+  }
+
+  .articles li {
+    width: 50%;
+    float: left;
+    color: $medium-gray;
+
+    a {
+      // font-family: $serif-2;
+      // font-weight: bold;
+      color: #333;
+
+      &:hover {
+        color: $hover-link-color;
+      }
+    }
+  }
+}
+

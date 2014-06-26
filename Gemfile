@@ -6,6 +6,8 @@ gem "middleman", "~> 3.3.3"
 gem "middleman-blog", "~> 3.5.3"
 gem 'middleman-livereload'
 gem 'middleman-syntax'
+gem 'middleman-alias'
+gem 'middleman-sync'
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
@@ -15,3 +17,4 @@ gem 'bourbon'
 gem 'neat'
 
 gem 'redcarpet'
+gem 'nokogiri'
