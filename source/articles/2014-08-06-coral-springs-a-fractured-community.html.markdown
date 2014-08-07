@@ -3,28 +3,28 @@ title: A Fractured Community
 date: 2014-08-06 22:57 UTC
 tags: community, religion
 ---
-I've been working on this post for a few weeks now -- even longer in my head. This is a very difficult topic for me to post publicly but I feel compelled. There are too many rumors and half-truths floating about in the my community; I can't sit idly by while a problem festers.
+I've been working on this post for a few weeks now -- even longer in my head. This is a difficult topic for me to post but I feel compelled. There are too many rumors and half-truths floating about in the my community; I can't sit by while a problem festers.
 
-I've written this mostly so there is at least a record of where I stand on things and maybe even a little bit of the why too.
+I've written this so there is at least a record of where I stand on things and maybe even a little bit of the why too.
 
 ## Some Background
 
-I live in Coral Springs and have been part of the [Chabad community](http://www.coralspringschabad.org) for many years. I've lived in the city for longer, but my family and I really starting getting closer to Judaism about 15 years ago; before going to the Chabad, we attended a local reform temple.
+I live in Coral Springs and have been part of the [Chabad community](http://www.coralspringschabad.org) for many years. I've lived in the city for longer, but my family and I really started getting close to Judaism about 15 years ago. Before going to the Chabad, we attended a local reform temple.
 
-The story, as I mostly understand it, started when my Dad found his Father's tefillin and wanted to put them on. He asked the Rabbi of the reform temple and the Rabbi didn't know how.
+The story, as I understand it, started when my Dad found his Father's tefillin and wanted to put them on. He asked the Rabbi of the reform temple and the Rabbi didn't know how.
 
 Coral Springs, like most cities, doesn't have much competition in the way of observant jewry. It's either Chabad or nothing. That's a subject of another discussion -- it's neither good nor bad, it just is. 
 
-My Dad went over the the Chabad (it was just down the street) and they not only knew how, they helped him. The Rabbis were open and warm, the community close, and we were hooked.
+My Dad went over the the Chabad (it was just down the street) and they not only knew how, they helped him. The Rabbis were open and warm, the community close, and we got hooked.
 
-The rest as they say was history. We grew closer, I ended up going to a [jewish day school](https://www.edline.net/pages/Hebrew_Academy_CommunitySchool), we made the home kosher, and ultimately, I'm now a Torah-observant Jew with my own kosher home.
+The rest as they say was history. We grew closer to judaism. I went to a jewish day school. We made our home kosher. And now I'm now a Torah-observant Jew with my own kosher home.
 
 My family helped establish this community and we helped fund the construction of the building. 
 
 Growing up and becoming closer to Judaism in this community gives me a unique perspective to criticize it.
 
 ## Noticing the Change
-The community has been transforming from one of outreach and warmth to one of severity and closed-mindedness. I know this didn't happen overnight. It has been a gradual process. I was just too involved with my own life and self-delusions (we all have them) to notice until it has gotten so far gone that I couldn't help but notice.
+The community transformed from one of outreach and warmth to one of severity and closed-mindedness. I know this didn't happen overnight. It has been a gradual process. I was just too involved with my own life and self-delusions (we all have them) to notice until it has gotten so far gone that I couldn't help but notice.
 
 Instead of an environment of acceptance and growth where whatever you're doing is better than what you were, new-comers are insulted and demeaned. I know this is true because I invited a friend of mine to come join the minyan during Succot. 
 
@@ -38,19 +38,19 @@ My friend left, went for a walk, and stopped by later to share his experience. I
 
 There's a general lack of respect in the community. A perfect example is the division during prayer. The sanctuary is generally divided into two groups, classes really. 
 
-The upper-class are in the front. They sit at tables, they usually are black hatters, and they generally wear the standard Chabad uniform. The lower-class sit at regular chairs in the back. They come from all walks of life, are at varying degrees of observance, and mostly do what they can.
+The upper-class are in the front. They sit at tables, they usually are black hatters, and they generally wear the standard Chabad uniform. The lower-class sit at regular chairs in the back. They come from all walks of life and are at varying degrees of observance.
 
 The tone at the shul is that if you don't keep the arbitrary standards of the front-dwellers, you're somehow a lesser Jew.
 
-There is a general lack of respect for the building and its facilities by the community as a whole and even less respect from the people that use it the most.
+There is a general lack of respect for the building and its facilities by the community as a whole. There is even less respect from the people that use it the most.
 
 Children push the adults out of the way for food, fill their entire plates, and then just throw it on the floor when they are done. Not every child does this, and not every kid is as bad -- but it's an example and not far from the norm. 
 
 There's not really a single part of the building that hasn't received some attention from either my Dad or one of the few other community members that actually care about the building and its upkeep. 
 
-We've patched walls that people have kicked, cabinet doors that kids ripped off the hinges, repainted walls after food stained them, replaced door hardware, and so much more. We've actually had to replace the same things multiple times, not because they wore out, but because the same kid thought it'd be fun to break again. The parents are never held responsible.
+We've patched walls that people have kicked, cabinet doors that kids ripped off the hinges, repainted walls after food stained them, replaced door hardware, and so much more. We've had to replace the same things many times, not because they wore out, but because the same kid thought it'd be fun to break again. The parents are never held responsible.
 
-Even with all the work that had been done, the sanctuary still smells of mold and body odor. I think it has been absorbed into the drywall.
+Even with all the work, the sanctuary still smells of mold and body odor. I think it absorbed into the drywall.
 
 Along these lines, the mikvah is a disgrace. The water is not clean, everything smells like a terrible combination of mildew and bleach. There will be bugs, hair, and other things floating in the water. 
 
@@ -62,7 +62,7 @@ Around the beginning of the year a friend of mine (we'll call him Frank) suspect
 
 The only reason I mention this issue at all is because of the leadership (or lack thereof) and the reaction of the community and its members.
 
-People in the community would come talk to me, demanding I stop talking with Frank. My wife would receive random calls from people trying to convince her that Frank and his family were bad people. They'd also tell me that abuse was "impossible" because the teacher was essentially above reproach.
+People in the community would come talk to me, demanding I stop talking with Frank. My wife would receive random calls from people trying to convince her that Frank and his family were bad people. They'd also tell me that abuse was "impossible" because the teacher was above reproach.
 
 Frank and his family had at least one community member come to their house and start screaming at them from the street. They would receive calls telling them to leave.
 
@@ -95,7 +95,7 @@ After consulting with a Rav, I made sure to record the entire meeting (with perm
 
 The meeting, as it turned out, was about the minyan I had started.
 
-The meeting lasted for over an hour. The first 15-20 minutes or so was spent bad-mouthing Frank and his family. Rabbi Denburg offered to show us the reports from abuse investigators (I'm pretty sure that's not really allowed), from the police, and he even had partial screen shots of text message threads between multiple third parties.
+The meeting lasted for over an hour. He dedicated the first 15-20 minutes or so to bad-mouthing Frank and his family. Rabbi Denburg offered to show us the reports from abuse investigators (I'm pretty sure that's not really allowed), from the police, and he even had partial screen shots of text message threads between third parties.
 
 He even told us that he discussed the issue at length with his advisor (who also later happened to be a judge on the Beis Din) and shared Beis Din's ruling. I thought this was more than a little strange that a long time advisor would be a judge in his case, but I didn't and still don't know the exact rules on the permissibility of judges.
 
