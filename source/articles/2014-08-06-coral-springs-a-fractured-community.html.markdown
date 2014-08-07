@@ -119,7 +119,7 @@ Honestly, if he had just asked us to stop we would have. We had/have no intentio
 
 We would have found another way to find meaning.
 
-## The fracture
+## TLDR;
 The [Chabad of Coral Springs](http://www.coralspringschabad.org) and it's associated institutions ([Beis Chaya](http://www.baischaya.com), [Hebrew Academy](https://www.edline.net/pages/Hebrew_Academy_CommunitySchool), and the [Mesifta](http://www.mesivtacs.com/templates/articlecco_cdo/aid/1506318/jewish/Contact-Us.htm)) are run by a wanna-be gangster that threatens his opponents and thinks he can do whatever he wants to whomever he wants.
 
 This community and it's leaders have lost touch with the ideals of Chabad as I understand them: warmth, love, and joy. I'm ashamed that it took me this long to realize it.
