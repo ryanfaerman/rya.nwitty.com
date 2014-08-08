@@ -15,17 +15,11 @@ What's different about the way I've solved this problem from others, is that bra
 Plus, if you're not really working with migrations or just don't want the hassle of branching your database, just don't run the rake commands and the default rails pattern of `APPLICATION_ENVIRONMENT` gets used.
 
 ## Installing Dependencies
-First, you'll need to add the [git gem](https://github.com/schacon/ruby-git) to your bundle and then install it `bin/bundle install`.
+The class below doesn't have any external dependencies beyond Rails. Even if you don't use Rails, it'd be pretty simple to modify it to suit your needs.
 
-```ruby
-group :development do
-	gem 'git'
-end
-```
+I throw this into `/lib` since it isn't really project specific and I already have my lib directory auto-loading.
 
-We also need a simple class in `/lib` that figures out which database we should be using.
-
-> NOTE: This only works for MySQL. If you're using another ActiveRecord-supported database server, you'll have to change `#existing_databases` to something that will spit out the list of databases.
+This only works for MySQL. If you're using another ActiveRecord-supported database server, you'll have to change `#existing_databases` to something that will spit out the list of databases.
 
 ```ruby
 class BranchedDatabase
@@ -34,7 +28,7 @@ class BranchedDatabase
   end
 
   def current_branch
-    Git.open('.').current_branch.parameterize
+    `git branch | grep "*"`.chomp.split.last.parameterize
   end
 
   def existing_databases
@@ -74,18 +68,37 @@ production:
   database:  myApplication_production
 ```
 
-Even though I *could* use the branched naming scheme for the production environment, I prefer to be explicit here. Well, that, and the dependency won't be installed when deploying to production since it's in the `development` group in the Gemfile.
+Even though I *could* use the branched naming scheme for the production environment, I prefer to be explicit here. 
 
 ## Rake to the Rescue
 
-There's only one thing left to do: remove some annoyances. 
+Since the branching feature is optional it opens an interesting can of worms. The standard rake tasks for the database won't work because `BranchedDatabase.name` returns the branched name *only* if the database exists. It doesn't yet... because we haven't created the database yet.
 
-I like adding a few rake tasks to run when starting or deleting branches. You could just run all the database related rake tasks directly, but I think these describe the intent a little bit better.
+It's your classic Catch 22.
+
+Instead of relying on the supplied database rake tasks, I reach into what these tasks are doing behind the scenes (sadly, this ties it to Rails 4.1 or so) and use the task classes directly.
 
 ```ruby
 namespace :db do
   desc 'Create branch specific database and load db/schema.rb'
-  task :branch => [:create, 'schema:load', 'test:prepare']
+  task :branch => :environment do
+    [:development, :test].each do |env|
+      config = ActiveRecord::Base.configurations.values_at(env.to_s).first
+
+      if env == :development
+        bdb = BranchedDatabase.new
+        config['database'] = [bdb.application_name, bdb.current_branch].join('_')
+      end
+
+      ActiveRecord::Tasks::DatabaseTasks.create(config)
+      ActiveRecord::Base.establish_connection(env)
+
+      if env == :test
+        ActiveRecord::Schema.verbose = false
+      end
+      ActiveRecord::Tasks::DatabaseTasks.load_schema
+    end
+  end
 
   desc 'Remove the branch specific database'
   task :unbranch => 'branch:remove'
@@ -118,6 +131,6 @@ git checkout develop
 git branch -d feature/new-feature-branch
 ```
 
-
+Happy Hacking!
 
 
