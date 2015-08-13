@@ -1,0 +1,39 @@
+{{ partial "header.html" . }}
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1>My name is Ryan Faerman</h1>
+      <p>I make &amp; break things &ndash; usually code and sometimes wood</p>
+    </div>
+  </div>
+</div>
+
+{{ range first 10 (where .Data.Pages "Section" "post") }}
+      <article >
+        <h1>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h1>
+        {{ .Summary }}
+
+        {{ if .Truncated }}
+  <div class="read-more-link">
+    <a href="{{ .RelPermalink }}">Read More…</a>
+  </div>
+  {{ end }}
+      </article>
+    {{ end }}
+
+{{if len .Data.Pages gt 10}}
+<section id="older-posts">
+  <h3>Older Posts</h3>
+  <ul class="articles">
+    {{ range $i, $p := (where .Data.Pages "Section" "post") }}
+    {{ if gt $i 10}}
+      <li>{{$p.Title}}</li>
+    {{end}}
+    {{end}}
+  </ul>
+</section>
+{{end}}
+{{ partial "footer.html" . }}
