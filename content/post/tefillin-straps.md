@@ -1,15 +1,13 @@
 +++
 date = "2011-01-14T00:03:43-04:00"
-draft = true
 title = "Tefillin Straps"
 aliases = [
-  "/notebook/2011/01/14/tefillin-straps.html"
+  "/notebook/2011/01/14/tefillin-straps.html",
+  "/tefillin-straps/index.html",
 ]
 +++
 
 This morning as I finished my morning prayers, I took a minute just to look at my tefillin and think about a few lessons to draw them from.
-
-<!--more-->
 
 Tefillin straps are bound on your non-dominant arm going away from your body; this causes a very important thing to happen - the more you turn your arm away, the tighter the straps become.
 
@@ -34,3 +32,4 @@ The binding that stands in the way only increases the pressure the more you turn
 And that is exactly the purpose and lesson of the tefillin straps. They have power over you because you are the one that bound them to your arm; you are the one that gave them that power.
 
 Unbind them, take away that power, and they are not much more than mere leather.
+

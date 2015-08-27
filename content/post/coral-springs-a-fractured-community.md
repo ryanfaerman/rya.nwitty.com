@@ -1,13 +1,14 @@
 +++
-date = "2014-08-06T22:57:59-04:00"
-draft = true
+date = "2014-08-06T22:57:00-04:00"
 title = "A Fractured Community"
+aliases = [
+  "/coral-springs-a-fractured-community/index.html",
+]
 +++
+
 I've been working on this post for a few weeks now -- even longer in my head. This is a difficult topic for me to post but I feel compelled. There are too many rumors and half-truths floating about in the my community; I can't sit by while a problem festers.
 
 I've written this so there is at least a record of where I stand on things and maybe even a little bit of the why too.
-
-<!--more-->
 
 ## Some Background
 
@@ -131,3 +132,4 @@ I've been hosting the minyan at my house ever since Shavuous and I'd like to con
 I don't know if having a completely separate minyan is the solution to the issues within the Coral Springs Jewish community.
 
 I don't know if there *is* a solution, but I have to at least try *something*.
+
