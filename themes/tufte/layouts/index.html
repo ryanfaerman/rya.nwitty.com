@@ -10,30 +10,30 @@
 </div>
 
 {{ range first 10 (where .Data.Pages "Section" "post") }}
-      <article >
-        <h1>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h1>
-        {{ .Summary }}
+  <article >
+    <h1>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h1>
+    {{ .Content }}
+    <hr class="ookiaks" />
+  </article>
 
-        {{ if .Truncated }}
-  <div class="read-more-link">
-    <a href="{{ .RelPermalink }}">Read More…</a>
-  </div>
-  {{ end }}
-      </article>
-    {{ end }}
+{{ end }}
 
-{{if len .Data.Pages gt 10}}
-<section id="older-posts">
+{{ $n := len .Data.Pages}}
+{{ if gt $n 10 }}
+<section id="continued-posts">
   <h3>Older Posts</h3>
   <ul class="articles">
     {{ range $i, $p := (where .Data.Pages "Section" "post") }}
-    {{ if gt $i 10}}
-      <li>{{$p.Title}}</li>
-    {{end}}
+      {{ if gt $i 10}}
+      <li>
+        <a href="{{ $p.Permalink }}">{{ $p.Title }}</a>
+      </li>
+      {{end}}
     {{end}}
   </ul>
 </section>
-{{end}}
+{{ end }}
+
 {{ partial "footer.html" . }}

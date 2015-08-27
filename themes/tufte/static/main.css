@@ -142,3 +142,45 @@
     }
 }
 
+hr.ookiaks {
+    text-align: center;
+    color: #000;
+    margin-top: 6em;
+    height: 0;
+    border-width: 0;
+    background-color: inherit;
+    width: 55%;
+    margin-right: 45%;
+}
+
+hr.ookiaks::after {
+    content: "··•··";
+    letter-spacing: 2em;
+}
+
+#continued-posts {
+    width: 55%;
+}
+
+#continued-posts .articles::after {
+    clear: both;
+}
+#continued-posts .articles::before
+#continued-posts .articles::after, {
+    content: " ";
+    display: display;
+}
+
+#continued-posts .articles {
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+#continued-posts .articles li {
+    width: 50%;
+    float: left;
+}
+
+#continued-posts a {
+    font-size: 1.1rem;
+}
