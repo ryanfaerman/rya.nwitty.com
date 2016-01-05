@@ -1,3 +1,5 @@
 baseurl = "http://ryanfaerman.com/"
 languageCode = "en-us"
 title = "Ryan Faerman"
+theme = "tufte"
+watch = true
