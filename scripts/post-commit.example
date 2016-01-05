@@ -15,7 +15,7 @@ if [[ "$branch" == "master" ]]; then
   hugo
   echo "Syncing public/* with s3://$bucket/$prefix."
   s3cmd --acl-public --delete-removed --no-progress sync public/* s3://$bucket/$prefix
-  echo -e "\nUpdated s3://$bucket/$prefix. Invalidating cloudfront distribution $distribution."
+  echo -e "\nUpdated s3://$bucket/$prefix.\nInvalidating cloudfront distribution $distribution."
   aws cloudfront create-invalidation --distribution-id $distribution --paths /index.html
   echo -e "\nInvalidated /index.html in $distribution"
 else
