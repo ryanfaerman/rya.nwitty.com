@@ -165,6 +165,7 @@ hr.ookiaks::after {
 #continued-posts .articles::after {
     clear: both;
 }
+
 #continued-posts .articles::before
 #continued-posts .articles::after, {
     content: " ";
@@ -183,4 +184,15 @@ hr.ookiaks::after {
 
 #continued-posts a {
     font-size: 1.1rem;
+}
+
+#footer {
+  padding-top: 35px;
+  clear: both;
+
+}
+
+#footer p {
+  font-size: 16px;
+  width: 100%;
 }
