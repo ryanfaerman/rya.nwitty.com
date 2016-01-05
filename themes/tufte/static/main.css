@@ -203,7 +203,7 @@ subtitle aside {
   position: relative;
 }
 
-ol, ul {
+article ol, article ul {
   width: 55%;
 }
 
