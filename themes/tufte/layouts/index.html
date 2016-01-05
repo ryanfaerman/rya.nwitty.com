@@ -9,7 +9,7 @@
   </div>
 </div>
 
-{{ range first 10 (where .Data.Pages "Section" "post") }}
+{{ range first 7 (where .Data.Pages "Section" "post") }}
   <article >
     <h1>
       <a href="{{ .Permalink }}">{{ .Title }}</a>
@@ -21,7 +21,7 @@
 {{ end }}
 
 {{ $n := len .Data.Pages}}
-{{ if gt $n 10 }}
+{{ if gt $n 7 }}
 <section id="continued-posts">
   <h3>Older Posts</h3>
   <ul class="articles">
