@@ -2,7 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
   <meta charset="utf-8"/>
+  {{ if eq .Title .Site.Title }}
+  <title> {{ .Site.Title }} </title>
+  {{ else }}
   <title> {{ .Title }} &middot; {{ .Site.Title }} </title>
+  {{ end }}
   <link rel="stylesheet" href="{{ .Site.BaseURL }}tufte.css"/>
   <link rel="stylesheet" href="{{ .Site.BaseURL }}main.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
