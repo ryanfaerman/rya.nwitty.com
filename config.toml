@@ -1,4 +1,4 @@
-baseurl = "//www.ryanfaerman.com/"
+baseurl = "https://www.ryanfaerman.com/"
 languageCode = "en-us"
 title = "Ryan Faerman"
 theme = "tufte"
