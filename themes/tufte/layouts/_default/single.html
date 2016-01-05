@@ -1,7 +1,10 @@
 {{ partial "header.html" . }}
   <article>
     <h1>{{ .Title }}</h1>
-    <subtitle>{{ .Date.Format "Mon, Jan 2, 2006" }}</subtitle>
+    <subtitle>
+      {{ .Date.Format "Mon, Jan 2, 2006" }}
+      <aside>{{ .WordCount }} words · {{ .ReadingTime }} minutes</aside>
+    </subtitle>
     {{ .Content }}
 
     <hr class="ookiaks" />

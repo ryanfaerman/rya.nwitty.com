@@ -186,10 +186,30 @@ hr.ookiaks::after {
     font-size: 1.1rem;
 }
 
+subtitle {
+  width: 55%;
+}
+
+subtitle aside {
+  float: right;
+  clear: right;
+  margin-right: -58%;
+  width: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  vertical-align: baseline;
+  position: relative;
+}
+
+ol, ul {
+  width: 55%;
+}
+
 #footer {
   padding-top: 35px;
   clear: both;
-
 }
 
 #footer p {
