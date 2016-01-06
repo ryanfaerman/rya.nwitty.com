@@ -1,3 +1,5 @@
+{{ $visible_post_count := 7}}
+
 {{ partial "header.html" . }}
 
 <div class="hero">
@@ -9,7 +11,7 @@
   </div>
 </div>
 
-{{ range first 7 (where .Data.Pages "Section" "post") }}
+{{ range first $visible_post_count (where .Data.Pages "Section" "post") }}
   <article >
     <h1>
       <a href="{{ .Permalink }}">{{ .Title }}</a>
@@ -26,7 +28,7 @@
   <h3>Older Posts</h3>
   <ul class="articles">
     {{ range $i, $p := (where .Data.Pages "Section" "post") }}
-      {{ if gt $i 10}}
+      {{ if gt $i $visible_post_count}}
       <li>
         <a href="{{ $p.Permalink }}">{{ $p.Title }}</a>
       </li>
