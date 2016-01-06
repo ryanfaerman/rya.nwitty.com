@@ -146,6 +146,7 @@ hr.ookiaks {
     background-color: inherit;
     width: 55%;
     margin-right: 45%;
+    clear: both;
 }
 
 hr.ookiaks::after {
