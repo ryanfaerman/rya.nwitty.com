@@ -5,7 +5,7 @@ title = "Migrating to Hugo"
 
 I like to play with different technology to build websites. And, like a mad scientist, I generally experiment on myself and my own site.
 
-My website was fairly recently powered by Middleman{{% sidenote %}}Middleman is great and all but I've become a gopher.![a happy gopher](/assets/gopher-with-flag.png){{% /sidenote %}} and now it isn't. I've moved everything over to use Hugo instead.
+My website was fairly recently powered by Middleman{{% sidenote %}}Middleman is great and all but I've become a gopher. <br />![a happy gopher](/assets/gopher-with-flag.png){{% /sidenote %}} and now it isn't. I've moved everything over to use Hugo instead.
 
 Hugo is pretty neat. Other than being written in Go, it's also distributed as a single binary without any external dependency. I don't need to get a ruby environment setup{{% sidenote %}}Don't get me wrong, I like ruby but if you've ever had to [resolve dependency conflicts](http://devblog.avdi.org/2015/08/11/what-its-like-to-come-back-to-a-ruby-project-after-6-months/), you know what I'm talking about.{{% /sidenote %}} or fight with any dependencies.
 
