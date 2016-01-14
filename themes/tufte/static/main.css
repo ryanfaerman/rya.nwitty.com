@@ -137,6 +137,10 @@
     }
 }
 
+article {
+    counter-reset: sidenote-counter;
+}
+
 hr.ookiaks, article hr {
     text-align: center;
     color: #000;
