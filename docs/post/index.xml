@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Ryan Faerman</title>
+    <link>https://www.ryanfaerman.com/post/</link>
+    <description>Recent content in Posts on Ryan Faerman</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Jan 2016 12:50:00 -0400</lastBuildDate>
+    
+	<atom:link href="https://www.ryanfaerman.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Becoming a Carpenter</title>
+      <link>https://www.ryanfaerman.com/post/becoming-carpenter/</link>
+      <pubDate>Wed, 06 Jan 2016 12:50:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/becoming-carpenter/</guid>
+      <description>When my wife and I were looking for our first home, she joked with our realtor, &amp;ldquo;I&amp;rsquo;m looking for a house, my husband is just looking for a garage&amp;rdquo;. While not entirely true, it definitely had a source in truth. I grew up helping my Dad in the garage shop and I even had my own work bench that I never could keep organized.
+I&amp;rsquo;ve always felt that a home has two heartsJust like a Timelord : the kitchen and the garage.</description>
+    </item>
+    
+    <item>
+      <title>Migrating to Hugo</title>
+      <link>https://www.ryanfaerman.com/post/migrating-to-hugo/</link>
+      <pubDate>Tue, 05 Jan 2016 00:24:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/migrating-to-hugo/</guid>
+      <description>I like to play with different technology to build websites. And, like a mad scientist, I generally experiment on myself and my own site.
+My website was fairly recently powered by MiddlemanMiddleman is great and all but I&amp;rsquo;ve become a gopher.  and now it isn&amp;rsquo;t. I&amp;rsquo;ve moved everything over to use Hugo instead.
+Hugo is pretty neat. Other than being written in Go, it&amp;rsquo;s also distributed as a single binary without any external dependency.</description>
+    </item>
+    
+    <item>
+      <title>A Fractured Community</title>
+      <link>https://www.ryanfaerman.com/post/coral-springs-a-fractured-community/</link>
+      <pubDate>Wed, 06 Aug 2014 22:57:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/coral-springs-a-fractured-community/</guid>
+      <description>I&amp;rsquo;ve been working on this post for a few weeks now &amp;ndash; even longer in my head. This is a difficult topic for me to post but I feel compelled. There are too many rumors and half-truths floating about in the my community; I can&amp;rsquo;t sit by while a problem festers.
+I&amp;rsquo;ve written this so there is at least a record of where I stand on things and maybe even a little bit of the why too.</description>
+    </item>
+    
+    <item>
+      <title>Branch Specific Databases in Rails</title>
+      <link>https://www.ryanfaerman.com/post/branch-specific-database-in-rails/</link>
+      <pubDate>Wed, 06 Aug 2014 14:07:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/branch-specific-database-in-rails/</guid>
+      <description>If you&amp;rsquo;ve worked on a Rails project for any length of time and you use feature branches (you really should be), you quickly run into migrations &amp;ldquo;leaking&amp;rdquo; across your git branches.
+Sometimes it isn&amp;rsquo;t a big deal, a missing field here, an extra field there &amp;ndash; you learn to ignore errors. This is a bad idea, since then you&amp;rsquo;ll just dismiss the important errors too.
+A technique I&amp;rsquo;ve started using (and I&amp;rsquo;m not the only one) is to use branch specific database tables.</description>
+    </item>
+    
+    <item>
+      <title>Gate (In)security</title>
+      <link>https://www.ryanfaerman.com/post/gate-insecurity/</link>
+      <pubDate>Tue, 10 Jul 2012 00:00:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/gate-insecurity/</guid>
+      <description>About a month ago, my wife and I moved to a new apartment (technically, it&amp;rsquo;s a condominium that we&amp;rsquo;re renting). It&amp;rsquo;s a gated community complete with RFID access cards and one of those boxes where visitors dial a code to ask us to let them through the gate. Thankfully, the gate isn&amp;rsquo;t tied to a landline and can be associated with a cell phone - it&amp;rsquo;s very modern.
+There are a couple shortcomings with the system: you only can connect one number and you can&amp;rsquo;t (or rather, the management office won&amp;rsquo;t) setup a generic access code to give to friends and family.</description>
+    </item>
+    
+    <item>
+      <title>Building a Boxing Gym</title>
+      <link>https://www.ryanfaerman.com/post/building-a-boxing-gym/</link>
+      <pubDate>Mon, 14 May 2012 00:00:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/building-a-boxing-gym/</guid>
+      <description>For a handful of reasons, my Dad decided that a punching bag in the garage wouldn&amp;rsquo;t be such a bad idea. Since I have a pretty decent background in martial arts, I acted as the consultant for this project.
+My martial arts background is mostly with Muay Thai and Krav Maga over standard boxing, so the setup we went with reflects that. We went with an MMA sized heavy bag since Ayelet and I both enjoy kicking the bag (we&amp;rsquo;ll be moving closer to my parent&amp;rsquo;s house in June, so this saves us gym membership).</description>
+    </item>
+    
+    <item>
+      <title>Upgrading my CentOS Server</title>
+      <link>https://www.ryanfaerman.com/post/upgrading-my-centos-server/</link>
+      <pubDate>Fri, 20 Apr 2012 00:00:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/upgrading-my-centos-server/</guid>
+      <description>My main server has been growing rather long in the tooth (CentOS 5.3) and until recently, I&amp;rsquo;ve been putting off actually doing something about it, since I&amp;rsquo;m just lazy. There were always a few &amp;ldquo;essential&amp;rdquo; domains and services that I couldn&amp;rsquo;t risk going down and until recently, I just accepted that &amp;ndash; Until I couldn&amp;rsquo;t anymore; A few things forced my hands.
+ Nginx doesn&amp;rsquo;t really operate well with CentOS 5.</description>
+    </item>
+    
+    <item>
+      <title>Zencoder Node.js Module</title>
+      <link>https://www.ryanfaerman.com/post/zencoder-nodejs-api/</link>
+      <pubDate>Sat, 03 Mar 2012 00:00:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/zencoder-nodejs-api/</guid>
+      <description>Recently I was working on a node.js project that involved some audio encoding and I hit my first project snag - I wanted to use Zencoder to deal with the actual transcoding but I couldn&amp;rsquo;t find anything via npm that would help me out. Looks like it was time to start shaving a yak.
+I quickly built a module that handles the entire spectrum of the Zencoder API, which thankfully is fairly well documented.</description>
+    </item>
+    
+    <item>
+      <title>The Setup 2012</title>
+      <link>https://www.ryanfaerman.com/post/the-setup/</link>
+      <pubDate>Thu, 16 Feb 2012 00:00:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/the-setup/</guid>
+      <description>The Hardware I&amp;rsquo;m rocking a 2011 15&amp;rdquo; Macbook Pro on a stand with the Apple Thunderbolt Display. I just added a Hoverbar which holds my iPad out to the side; I think it&amp;rsquo;ll be useful, but we&amp;rsquo;ll see.
+My microphone is off to the side on a desk mounted arm that swings into place when I&amp;rsquo;m ready to record screencasts or do anything else that requires audio. It&amp;rsquo;s a little extravagent but I like it.</description>
+    </item>
+    
+    <item>
+      <title>Colophon</title>
+      <link>https://www.ryanfaerman.com/post/colophon/</link>
+      <pubDate>Sun, 12 Feb 2012 00:00:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/colophon/</guid>
+      <description>Thanks to Jekyll and Jekyll S3 this site is hosted entirely on Amazon S3. All assets are served using Cloudfront - Amazon&amp;rsquo;s CDN that serves directly from S3.
+The design was made entirely by myself and should would on most browsers and operating systems. I haven&amp;rsquo;t completed extensive testing but it should work. I&amp;rsquo;ve made no attempt for anything to work in Internet Explorer, but it should work in recent versions of that horrible browser.</description>
+    </item>
+    
+    <item>
+      <title>Favorite Software</title>
+      <link>https://www.ryanfaerman.com/post/favorite-software/</link>
+      <pubDate>Sun, 12 Feb 2012 00:00:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/favorite-software/</guid>
+      <description> Just as a reference for when a friend asks me what software I use, I figured I&amp;rsquo;d add a reference online for that. Without further ado, my list.
+Macbook Pro  Application launcher: Alfred App Feed Reader: Reeder Chat: iChat Bittorrent: Transmission Disc Burning: Burn IRC: irssi via SSH FTP/SFTP: Transmit Text Editors: Sublime Text 2 Twitter: Twitter Notifications: Growl Embedded Desktop Information: GeekTool VNC: Chicken of the VNC Remote Desktop: CoRD MySQL Databases: Sequel Pro Audio/Visual (anything Quicktime won’t play): VLC File Syncing: Dropbox Offsite Backup: Back Blaze  </description>
+    </item>
+    
+    <item>
+      <title>24 Words</title>
+      <link>https://www.ryanfaerman.com/post/24-words/</link>
+      <pubDate>Wed, 27 Apr 2011 00:00:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/24-words/</guid>
+      <description>Announced and shared a few weeks ago, 24 words is a digital, shareable version of the classic Bingo and I figured now would be as good a time as any to give it a quick writeup since this is the first real project I&amp;rsquo;m sharing that isn&amp;rsquo;t just a backend tool for developers.
+By the way, all the code has been released on bitbucket https://bitbucket.org/ryanfaerman/word-bingo. Download it, play with it, and by all means, hack it to pieces.</description>
+    </item>
+    
+    <item>
+      <title>Decapitation at Virgina Tech</title>
+      <link>https://www.ryanfaerman.com/post/decapitation-at-virgina-tech/</link>
+      <pubDate>Wed, 27 Apr 2011 00:00:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/decapitation-at-virgina-tech/</guid>
+      <description>Yesterday (Thursday, January 22, 2009), a young woman was decapitated at Virgina Tech with a kitchen knife (via The Associated Press). She was a foreign student who had arrived less than three weeks prior to her death.
+How could no one notice some guy taking a kitchen knife to a woman&amp;rsquo;s neck until after she had been murdered? I don’t propose to know the exact details as to how to go about decapitating someone with a kitchen knife, but I’d imagine it isn’t a quick and easy process.</description>
+    </item>
+    
+    <item>
+      <title>AJAX Uploading</title>
+      <link>https://www.ryanfaerman.com/post/ajax-uploading/</link>
+      <pubDate>Wed, 30 Mar 2011 00:00:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/ajax-uploading/</guid>
+      <description>This guide is primarily aimed towards making an image uploader, but with a view changes it would work for just about anything.
+Markup This part is entirely optional, but I feel that it really makes the interface much nicer so I like it.
+File fields are ugly and difficult, if not impossible, to style properly.
+The HTML &amp;lt;div class=&amp;quot;uploader&amp;quot;&amp;gt; &amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;image&amp;quot; /&amp;gt; &amp;lt;div class=&amp;quot;img&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;button class=&amp;quot;image-upload clean-gray&amp;quot;&amp;gt;Upload Image&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt;  The CSS .</description>
+    </item>
+    
+    <item>
+      <title>4D Systems Touch Display</title>
+      <link>https://www.ryanfaerman.com/post/4d-systems-touch-display/</link>
+      <pubDate>Thu, 10 Feb 2011 00:00:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/4d-systems-touch-display/</guid>
+      <description>I recently ordered a 4D Systems Touch Display from Sparkfun. It took me a few tries to get things working (basic stuff like load new software) but I figured it out in the end. Turns out the display is fairly strict on wanting 5V logic levels, 3.3V just don&amp;rsquo;t cut it.
+Even though I have a FTDI cable, I have the 3.3 volt model, I used an old arduino board with the AVR removed.</description>
+    </item>
+    
+    <item>
+      <title>Knight Rider Lights</title>
+      <link>https://www.ryanfaerman.com/post/knight-rider-lights/</link>
+      <pubDate>Thu, 10 Feb 2011 00:00:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/knight-rider-lights/</guid>
+      <description>I&amp;rsquo;ve created new Knight Rider Lights which are a massive upgrade. If you think these are cool, I encourage you to check out the Mark II
+ Since just about the first week I owned my car, I’ve wanted to have some lights in the bumper. I wanted them to move like the Knight Rider’s lights moved, be white, and totally rock.
+I don’t know why I never pursued the idea.</description>
+    </item>
+    
+    <item>
+      <title>Knight Rider Mark II</title>
+      <link>https://www.ryanfaerman.com/post/knight-rider-mark-ii/</link>
+      <pubDate>Thu, 10 Feb 2011 00:00:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/knight-rider-mark-ii/</guid>
+      <description>I used to have Knight Rider Lights on my car - they broke and were removed. I attempted to repair them but that didn&amp;rsquo;t work out so well; at the end of the day, I chose to just scrap that version and start over with a fresh design.
+Design started sometime later but the final implementation really started within the past few months when I actually sat down to do what needed to be done (which was pretty much all the control electronics).</description>
+    </item>
+    
+    <item>
+      <title>Tefillin Straps</title>
+      <link>https://www.ryanfaerman.com/post/tefillin-straps/</link>
+      <pubDate>Fri, 14 Jan 2011 00:03:43 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/tefillin-straps/</guid>
+      <description>This morning as I finished my morning prayers, I took a minute just to look at my tefillin and think about a few lessons to draw them from.
+Tefillin straps are bound on your non-dominant arm going away from your body; this causes a very important thing to happen - the more you turn your arm away, the tighter the straps become.
+So what&amp;rsquo;s the big deal?
+One thing I&amp;rsquo;ve learned from this, is that going away from your problem (being bound) it gets harder, whereas turning towards your problem (the binding) things get easier.</description>
+    </item>
+    
+    <item>
+      <title>PHP Twitter Search API</title>
+      <link>https://www.ryanfaerman.com/post/php-twitter-search/</link>
+      <pubDate>Thu, 23 Dec 2010 00:00:00 -0400</pubDate>
+      
+      <guid>https://www.ryanfaerman.com/post/php-twitter-search/</guid>
+      <description>I&amp;rsquo;ve implemented the twitter search API in a PHP class just for fun. It implements the entire search API as of February 25, 2009. I&amp;rsquo;ve only tested this with PHP 5.2.6 but I am fairly confident that most installations of PHP5 should work just fine. If you try it with PHP4 and it works (or if you have to jigger it) let me know.
+You can check out the source code in the github repository: ryanfaerman/php-twitter-search-api</description>
+    </item>
+    
+  </channel>
+</rss>

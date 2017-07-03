@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/becoming-carpenter/</loc>
+    <lastmod>2016-01-06T12:50:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/migrating-to-hugo/</loc>
+    <lastmod>2016-01-05T00:24:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/coral-springs-a-fractured-community/</loc>
+    <lastmod>2014-08-06T22:57:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/branch-specific-database-in-rails/</loc>
+    <lastmod>2014-08-06T14:07:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/gate-insecurity/</loc>
+    <lastmod>2012-07-10T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/building-a-boxing-gym/</loc>
+    <lastmod>2012-05-14T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/upgrading-my-centos-server/</loc>
+    <lastmod>2012-04-20T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/zencoder-nodejs-api/</loc>
+    <lastmod>2012-03-03T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/the-setup/</loc>
+    <lastmod>2012-02-16T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/colophon/</loc>
+    <lastmod>2012-02-12T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/favorite-software/</loc>
+    <lastmod>2012-02-12T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/24-words/</loc>
+    <lastmod>2011-04-27T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/decapitation-at-virgina-tech/</loc>
+    <lastmod>2011-04-27T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/ajax-uploading/</loc>
+    <lastmod>2011-03-30T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/4d-systems-touch-display/</loc>
+    <lastmod>2011-02-10T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/knight-rider-lights/</loc>
+    <lastmod>2011-02-10T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/knight-rider-mark-ii/</loc>
+    <lastmod>2011-02-10T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/tefillin-straps/</loc>
+    <lastmod>2011-01-14T00:03:43-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/php-twitter-search/</loc>
+    <lastmod>2010-12-23T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/post/</loc>
+    <lastmod>2016-01-06T12:50:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/</loc>
+    <lastmod>2016-01-06T12:50:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ryanfaerman.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

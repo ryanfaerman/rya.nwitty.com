@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8"/>
+  
+  <title> Upgrading my CentOS Server &middot; Ryan Faerman </title>
+  
+  <link rel="stylesheet" href="https://www.ryanfaerman.com/tufte.css"/>
+  <link rel="stylesheet" href="https://www.ryanfaerman.com/main.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <style type="text/css">
+   img { mix-blend-mode: multiply; }
+  </style>
+
+  <meta name="generator" content="Hugo 0.24.1" />
+  
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="home" href="/">
+            <i class="fa fa-home"></i>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav external pull-right">
+        <li class="nav-item">
+          <a href="https://www.linkedin.com/in/ryanfaerman">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/ryanfaerman">
+            <i class="fa fa-github-alt"></i>
+          </a>
+          <a href="https://www.flickr.com/photos/ryanfaerman/">
+            <i class="fa fa-flickr"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <article>
+    <h1>Upgrading my CentOS Server</h1>
+    <subtitle>
+      Fri, Apr 20, 2012
+      <aside>664 words · 4 minutes</aside>
+    </subtitle>
+    
+
+<p>My main server has been growing rather long in the tooth (CentOS 5.3) and until recently, I&rsquo;ve been putting off actually doing something about it, since I&rsquo;m just lazy. There were always a few &ldquo;essential&rdquo; domains and services that I couldn&rsquo;t risk going down and until recently, I just accepted that &ndash; Until I couldn&rsquo;t anymore; A few things forced my hands.</p>
+
+<ol>
+<li>Nginx doesn&rsquo;t really operate well with CentOS 5.3; I couldn&rsquo;t get it to run at all.</li>
+<li>Node.js started giving me issues with all the various cruft and versions of it that I&rsquo;ve experimented with over the years.</li>
+<li>I kinda, sorta deleted my entire <code>sites</code> directory (I had backups!) which made me notice all the junk I&rsquo;ve had in my trunk as I restored things.</li>
+</ol>
+
+<p>Despite having less time than ever to spend on my server, I actually have less worries about things now than before, due, in part, to moving some of my critical DNS and such to Amazon Web Services. My website, for example, is hosted on S3 and generated on my end with Jekyll; I&rsquo;ve moved the DNS for my primary domains to Amazon&rsquo;s Route 53 (it has a 100% uptime SLA!). The only downside of hosting my domain on S3, is that you can&rsquo;t point a naked domain to your S3 bucket; which means I still need my server to do a simple redirect from <code>ryanfaerman.com</code> to <code>www.ryanfaerman.com</code>. I also can&rsquo;t go without the dub-dubs, but the benefits far outweight the downsides here.</p>
+
+<p>Enough introduction, on to the meat and potatoes.</p>
+
+<h2 id="backup-all-the-things">Backup all the things!</h2>
+
+<p>Backing up is probably the most important step.</p>
+
+<p>The things that I backed up before doing this potentially catastrophic system upgrade were:</p>
+
+<ul>
+<li>Home directories. Pretty much everything in /home</li>
+<li>Website directories. I had just about everything in /var/html/sites.</li>
+<li>Any and all databases. I had both MySQL and MongoDB running.</li>
+<li>Some old Subversion repositories. I&rsquo;m all moved to git now, but history remains.</li>
+<li>Apache, and a few other extraneous config files</li>
+</ul>
+
+<p>I created tarballs or dumps where appropriate, downloaded them locally, then uploaded a copy to S3. I&rsquo;ll be keeping these backups there for a month or two - basically until I know things are stable enough.</p>
+
+<h2 id="upgrade-all-the-things">Upgrade all the things!</h2>
+
+<p>With backups out of the way and my mind mostly at ease, its time to run the monster command that starts this whole adventure rolling:</p>
+
+<pre><code>yum update
+</code></pre>
+
+<p>Of course that hit a quick snag. Yum failed with a bunch of nasty error messages as soon as it hit updating some perl stuff. A quick search later, and I <a href="http://blog.rowancrane.com/2009/05/13/yum-update-typeerror-unsubscriptable-object">discovered</a> that this is a fairly common error that is easily resolved.</p>
+
+<pre><code>yum clean metadata
+</code></pre>
+
+<p>After that, I ran <code>yum update</code> again and after a few minutes, I was asked to confirm a 400+ megabyte download. Once that finishes its thing, it is time for one of the scariest commands: <code>reboot</code>. Giving the server 5 minutes or so to reboot (and being just slightly nervous), I give it a quick ping and it&rsquo;s back.</p>
+
+<h2 id="installing-all-the-things">Installing all the things!</h2>
+
+<p>While I&rsquo;ve gotten everything setup by manually building &amp; configuring each service (I did take notes for this post, but they are verbose, boring, and soon to be outdated), I&rsquo;m learning to use <a href="http://www.opscode.com/chef/">Chef</a> to take care of it all in the future. Chef can also be used with <a href="http://vagrantup.com/">Vagrant</a>, a really slick VM provisioning tool that I&rsquo;m looking to use as a development server. Setting up my mac isn&rsquo;t too much of a challenge, but it will let me switch machines a little faster and make collaboration easier.</p>
+
+<p>Chef <em>should</em> make everything much simpler and easier to replicate when required and gives me much more flexibility should I ever decide to use something like Amazon EC2 (which I am considering).</p>
+
+<p>Even though <a href="https://github.com/mislav/git-deploy">git-deploy</a> to push my various projects live, I&rsquo;ve been using <a href="http://www.capistranorb.com/">Capistrano</a> at work, and have really grown to enjoy using it. I&rsquo;ll likely move my projects to use it after dealing with the server stuff.</p>
+
+
+    <hr class="ookiaks" />
+  </article>
+  <footer id="footer">
+    <p>Copyright &copy; Ryan Faerman</p>
+  </footer>
+  <script type="text/javascript" src="https://www.ryanfaerman.com/main.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8"/>
+  
+  <title> Branch Specific Databases in Rails &middot; Ryan Faerman </title>
+  
+  <link rel="stylesheet" href="https://www.ryanfaerman.com/tufte.css"/>
+  <link rel="stylesheet" href="https://www.ryanfaerman.com/main.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <style type="text/css">
+   img { mix-blend-mode: multiply; }
+  </style>
+
+  <meta name="generator" content="Hugo 0.24.1" />
+  
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="home" href="/">
+            <i class="fa fa-home"></i>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav external pull-right">
+        <li class="nav-item">
+          <a href="https://www.linkedin.com/in/ryanfaerman">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/ryanfaerman">
+            <i class="fa fa-github-alt"></i>
+          </a>
+          <a href="https://www.flickr.com/photos/ryanfaerman/">
+            <i class="fa fa-flickr"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <article>
+    <h1>Branch Specific Databases in Rails</h1>
+    <subtitle>
+      Wed, Aug 6, 2014
+      <aside>614 words · 3 minutes</aside>
+    </subtitle>
+    
+
+<p>If you&rsquo;ve worked on a Rails project for any length of time and you use feature branches (you really should be), you quickly run into migrations &ldquo;leaking&rdquo; across your git branches.</p>
+
+<p>Sometimes it isn&rsquo;t a big deal, a missing field here, an extra field there &ndash; you learn to ignore errors. This is a bad idea, since then you&rsquo;ll just dismiss the important errors too.</p>
+
+<p>A technique I&rsquo;ve started using (and I&rsquo;m not the only one) is to use branch specific database tables. It&rsquo;s exactly what it sounds like: every feature branch has its own database.</p>
+
+<p>What&rsquo;s different about the way I&rsquo;ve solved this problem from others, is that branching the database is entirely optional. If you want to start working on a branched database, you just <code>rake db:branch</code> and when you&rsquo;re done, you can <code>rake db:unbranch</code> to clean it up.</p>
+
+<p>Plus, if you&rsquo;re not really working with migrations or just don&rsquo;t want the hassle of branching your database, just don&rsquo;t run the rake commands and the default rails pattern of <code>APPLICATION_ENVIRONMENT</code> gets used.</p>
+
+<h2 id="installing-dependencies">Installing Dependencies</h2>
+
+<p>The class below doesn&rsquo;t have any external dependencies beyond Rails. Even if you don&rsquo;t use Rails, it&rsquo;d be pretty simple to modify it to suit your needs.</p>
+
+<p>I throw this into <code>/lib</code> since it isn&rsquo;t really project specific and I already have my lib directory auto-loading.</p>
+
+<p>This only works for MySQL. If you&rsquo;re using another ActiveRecord-supported database server, you&rsquo;ll have to change <code>#existing_databases</code> to something that will spit out the list of databases.</p>
+
+<pre><code class="language-ruby">class BranchedDatabase
+  def self.name(*args)
+    new.name(*args)
+  end
+
+  def current_branch
+    `git branch | grep &quot;*&quot;`.chomp.split.last.parameterize
+  end
+
+  def existing_databases
+    if ENV['DB_PASSWORD'].present?
+      password = &quot;-p#{ENV['DB_PASSWORD']}&quot;
+    end
+    `mysql -u #{ENV['DB_USER']} #{password} -h #{ENV['DB_HOST']} -e \&quot;show databases\&quot;`.chomp.split
+  end
+
+  def name(prefix: application_name, separator: '_')
+    branch_database = [prefix, current_branch].join(separator)
+    if existing_databases.include?(branch_database)
+      branch_database
+    else
+      [prefix, Rails.env].join(separator)
+    end
+  end
+
+  def application_name
+    Rails.application.class.name.split('::').first.downcase
+  end
+end
+</code></pre>
+
+<h2 id="updating-database-yml">Updating database.yml</h2>
+
+<p>With the prerequisites in place, it&rsquo;s time to modify the <code>database.yml</code> to use the detected branch name.</p>
+
+<pre><code class="language-yml">development:
+  database:  &lt;%= BranchedDatabase.name %&gt;
+test:
+  &lt;&lt;: *defaults
+  database: myApplication_test
+production:
+  &lt;&lt;: *defaults
+  database:  myApplication_production
+</code></pre>
+
+<p>Even though I <em>could</em> use the branched naming scheme for the production environment, I prefer to be explicit here.</p>
+
+<h2 id="rake-to-the-rescue">Rake to the Rescue</h2>
+
+<p>Since the branching feature is optional it opens an interesting can of worms. The standard rake tasks for the database won&rsquo;t work because <code>BranchedDatabase.name</code> returns the branched name <em>only</em> if the database exists. It doesn&rsquo;t yet&hellip; because we haven&rsquo;t created the database yet.</p>
+
+<p>It&rsquo;s your classic Catch 22.</p>
+
+<p>Instead of relying on the supplied database rake tasks, I reach into what these tasks are doing behind the scenes (sadly, this ties it to Rails 4.1 or so) and use the task classes directly.</p>
+
+<pre><code class="language-ruby">namespace :db do
+  desc 'Create branch specific database and load db/schema.rb'
+  task :branch =&gt; :environment do
+    [:development, :test].each do |env|
+      config = ActiveRecord::Base.configurations.values_at(env.to_s).first
+
+      if env == :development
+        bdb = BranchedDatabase.new
+        config['database'] = [bdb.application_name, bdb.current_branch].join('_')
+      end
+
+      ActiveRecord::Tasks::DatabaseTasks.create(config)
+      ActiveRecord::Base.establish_connection(env)
+
+      if env == :test
+        ActiveRecord::Schema.verbose = false
+      end
+      ActiveRecord::Tasks::DatabaseTasks.load_schema
+    end
+  end
+
+  desc 'Remove the branch specific database'
+  task :unbranch =&gt; 'branch:remove'
+
+  namespace :branch do
+    task :remove =&gt; :drop
+
+    desc 'Remove then Create the branch specific database'
+    task :reset =&gt; [:remove, :branch]
+  end
+end
+</code></pre>
+
+<p>It&rsquo;s important to note what the rake tasks <em>do not</em> do: any sort of error checking. If you&rsquo;re in a different branch (like develop) and execute <code>rake db:unbranch</code> you will drop your development database.</p>
+
+<p>You&rsquo;re a big boy developer, you don&rsquo;t need your hand held &ndash; don&rsquo;t be stupid and you&rsquo;ll be okay.</p>
+
+<h2 id="getting-to-work">Getting to Work</h2>
+
+<p>With that, we&rsquo;re done - just a matter of using it.</p>
+
+<pre><code class="language-bash">git checkout -b feature/new-feature-branch
+bin/rake db:branch
+...
+git push -u origin feature/new-feature-branch
+...
+bin/rake db:unbranch
+git checkout develop
+git branch -d feature/new-feature-branch
+</code></pre>
+
+<p>Happy Hacking!</p>
+
+
+    <hr class="ookiaks" />
+  </article>
+  <footer id="footer">
+    <p>Copyright &copy; Ryan Faerman</p>
+  </footer>
+  <script type="text/javascript" src="https://www.ryanfaerman.com/main.js"></script>
+
+</body>
+</html>
+

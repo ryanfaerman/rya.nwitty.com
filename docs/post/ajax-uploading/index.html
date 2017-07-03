@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8"/>
+  
+  <title> AJAX Uploading &middot; Ryan Faerman </title>
+  
+  <link rel="stylesheet" href="https://www.ryanfaerman.com/tufte.css"/>
+  <link rel="stylesheet" href="https://www.ryanfaerman.com/main.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <style type="text/css">
+   img { mix-blend-mode: multiply; }
+  </style>
+
+  <meta name="generator" content="Hugo 0.24.1" />
+  
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="home" href="/">
+            <i class="fa fa-home"></i>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav external pull-right">
+        <li class="nav-item">
+          <a href="https://www.linkedin.com/in/ryanfaerman">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/ryanfaerman">
+            <i class="fa fa-github-alt"></i>
+          </a>
+          <a href="https://www.flickr.com/photos/ryanfaerman/">
+            <i class="fa fa-flickr"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <article>
+    <h1>AJAX Uploading</h1>
+    <subtitle>
+      Wed, Mar 30, 2011
+      <aside>213 words · 1 minutes</aside>
+    </subtitle>
+    
+
+<p>This guide is primarily aimed towards making an image uploader, but with a view changes it would work for just about anything.</p>
+
+<h2 id="markup">Markup</h2>
+
+<p>This part is entirely optional, but I feel that it really makes the interface much nicer so I like it.</p>
+
+<p>File fields are ugly and difficult, if not impossible, to style properly.</p>
+
+<h3 id="the-html">The HTML</h3>
+
+<pre><code class="language-html">&lt;div class=&quot;uploader&quot;&gt;
+	&lt;input type=&quot;file&quot; name=&quot;image&quot; /&gt;
+	&lt;div class=&quot;img&quot;&gt;&lt;/div&gt;
+	&lt;button class=&quot;image-upload clean-gray&quot;&gt;Upload Image&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="the-css">The CSS</h3>
+
+<pre><code class="language-css">.uploader {
+	float: left;
+	width: 130px;
+	height: 180px	;
+	margin-left: 10px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.uploader button {
+	width: 130px;
+	margin: 10px auto;
+}
+
+.uploader input {
+	opacity: 0.0;
+	position: absolute;
+	width: 130px;
+	height: 180px;
+	cursor: pointer;
+}
+
+.uploader .img {
+	float: right;
+}
+</code></pre>
+
+<h3 id="the-javascript">The Javascript</h3>
+
+<pre><code class="language-javascript">$(document).ready(function(){
+
+	$('.uploader input[type=file]').hover(function(){
+		$(this).siblings('button').toggleClass('hover');
+	}).change(function(e){
+
+		var $element = $(this);
+		var button = $element.siblings('button.image-upload');
+		button.text('Uploading...');
+		var name = $(this).val(),
+			file = e.currentTarget.files[0],
+			xhr = new XMLHttpRequest();
+
+		xhr.onreadystatechange = function(e){
+			var response = e.target.responseText;
+			if(response) {
+				response = JSON.parse(response);
+				console.log(response.$id);
+
+				var placeholder = $element.siblings('div.img');
+				var image = $element.siblings('img.img');
+
+				if(placeholder.length) {
+					image = $('&lt;img /&gt;', {'class': 'img'})
+					placeholder.after(image);
+					placeholder.detach();
+				}
+
+				if(image.length) {
+					image.attr({src: '/catalog/image/'+ response.$id });
+				}
+
+				$element.after($('&lt;input /&gt;', {
+					type: 'hidden',
+					name: 'images[]',
+					value: response.$id,
+					'class': 'images'
+				}));
+
+				var button = $element.siblings('button.image-upload');
+				button.text('Change Image');
+
+
+			}
+		};
+
+		xhr.open('POST', '/catalog/image', true);
+
+		xhr.setRequestHeader(&quot;X-File-Name&quot;, encodeURIComponent(name));
+		xhr.setRequestHeader(&quot;Content-Type&quot;, &quot;application/octet-stream&quot;);
+		xhr.send(file);
+
+
+	});
+
+});
+</code></pre>
+
+
+    <hr class="ookiaks" />
+  </article>
+  <footer id="footer">
+    <p>Copyright &copy; Ryan Faerman</p>
+  </footer>
+  <script type="text/javascript" src="https://www.ryanfaerman.com/main.js"></script>
+
+</body>
+</html>
+

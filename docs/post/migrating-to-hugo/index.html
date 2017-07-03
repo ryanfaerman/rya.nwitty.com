@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8"/>
+  
+  <title> Migrating to Hugo &middot; Ryan Faerman </title>
+  
+  <link rel="stylesheet" href="https://www.ryanfaerman.com/tufte.css"/>
+  <link rel="stylesheet" href="https://www.ryanfaerman.com/main.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <style type="text/css">
+   img { mix-blend-mode: multiply; }
+  </style>
+
+  <meta name="generator" content="Hugo 0.24.1" />
+  
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="home" href="/">
+            <i class="fa fa-home"></i>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav external pull-right">
+        <li class="nav-item">
+          <a href="https://www.linkedin.com/in/ryanfaerman">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/ryanfaerman">
+            <i class="fa fa-github-alt"></i>
+          </a>
+          <a href="https://www.flickr.com/photos/ryanfaerman/">
+            <i class="fa fa-flickr"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <article>
+    <h1>Migrating to Hugo</h1>
+    <subtitle>
+      Tue, Jan 5, 2016
+      <aside>466 words · 3 minutes</aside>
+    </subtitle>
+    
+
+<p>I like to play with different technology to build websites. And, like a mad scientist, I generally experiment on myself and my own site.</p>
+
+<p>My website was fairly recently powered by Middleman<label for="1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="1" class="margin-toggle"/>
+<span class="sidenote">Middleman is great and all but I&rsquo;ve become a gopher. <br /><img src="/assets/gopher-with-flag.png" alt="a happy gopher" /></span>
+ and now it isn&rsquo;t. I&rsquo;ve moved everything over to use Hugo instead.</p>
+
+<p>Hugo is pretty neat. Other than being written in Go, it&rsquo;s also distributed as a single binary without any external dependency. I don&rsquo;t need to get a ruby environment setup<label for="1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="1" class="margin-toggle"/>
+<span class="sidenote">Don&rsquo;t get me wrong, I like ruby but if you&rsquo;ve ever had to <a href="http://devblog.avdi.org/2015/08/11/what-its-like-to-come-back-to-a-ruby-project-after-6-months/">resolve dependency conflicts</a>, you know what I&rsquo;m talking about.</span>
+ or fight with any dependencies.</p>
+
+<p>Hugo, like the Middleman, Jekyll, and nanoc I used before it, is a static site generator. Despite being a software engineer and working daily operating an internal cloud, I&rsquo;ve come to really appreciate having a pile of files. I can serve this with just about any web server with little or no configuration.</p>
+
+<p>As an added bonus, since there isn&rsquo;t any server-side generation, just about any server could handle an incredible amount of traffic.</p>
+
+<p>I&rsquo;m a realist, I know that no one is really looking at my content.<label for="1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="1" class="margin-toggle"/>
+<span class="sidenote">Except you. You&rsquo;re a somebody&hellip; yea!</span>
+ I don&rsquo;t create it for most people, I write it mostly for myself. Knowing that, I want to spend as little as possible to host my personal site. The less it costs the better. To that end, I&rsquo;m hosting this site on Amazon S3 and fronting it with CloudFront.</p>
+
+<p>Yes. Using CloudFront for my little site is overkill but it&rsquo;s the best way I could come up with to serve everything over SSL.<label for="1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="1" class="margin-toggle"/>
+<span class="sidenote">Come on! <a href="https://letsencrypt.org">Let&rsquo;s Encrypt</a> already!</span>
+</p>
+
+<h2 id="built-on-the-shoulders-of-giants">Built on the Shoulders of Giants</h2>
+
+<p>First, we have the design of the site. I was greatly inspired by <a href="https://edwardtufte.github.io/tufte-css/">Tufte-css</a>; when I first saw that page I was blown away by the typography and especially the side notes. I felt that the design supported the type of writing that I enjoy, where I can interject<label for="1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="1" class="margin-toggle"/>
+<span class="sidenote">Saving literally dozens of dollars on parentheses and dashes. Punctuation doesn&rsquo;t grow on trees you know!</span>
+ into my own writing.</p>
+
+<p>A pretty face only gets you so far.</p>
+
+<p>With the design and content generation figured out, it was time to get this up to Amazon S3. In line with the style of Hugo, I pulled two more tools off the shelf:  <a href="https://github.com/s3tools/s3cmd">s3cmd</a> and <a href="https://github.com/aws/aws-cli">awscli</a>.</p>
+
+<p>Sprinkle in a bit of bash<label for="1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="1" class="margin-toggle"/>
+<span class="sidenote">Based off the work by <a href="http://imperialwicket.com/automatically-deploy-hugo-to-s3-and-cloudfront/">Nicholas Whitter</a>.</span>
+, I now had a git post-commit hook done that:</p>
+
+<ol>
+<li>Compiles the site with hugo</li>
+<li>Uploads the site to Amazon S3</li>
+<li>Purges the <code>index.html</code> file from CloudFront</li>
+</ol>
+
+<h2 id="done-for-now">Done for now</h2>
+
+<p>Just like this wasn&rsquo;t the first iteration of my site, this won&rsquo;t be the last. After all the journey is most of the fun with this stuff.</p>
+
+
+    <hr class="ookiaks" />
+  </article>
+  <footer id="footer">
+    <p>Copyright &copy; Ryan Faerman</p>
+  </footer>
+  <script type="text/javascript" src="https://www.ryanfaerman.com/main.js"></script>
+
+</body>
+</html>
+

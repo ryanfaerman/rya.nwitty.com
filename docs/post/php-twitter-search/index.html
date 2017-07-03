@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8"/>
+  
+  <title> PHP Twitter Search API &middot; Ryan Faerman </title>
+  
+  <link rel="stylesheet" href="https://www.ryanfaerman.com/tufte.css"/>
+  <link rel="stylesheet" href="https://www.ryanfaerman.com/main.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <style type="text/css">
+   img { mix-blend-mode: multiply; }
+  </style>
+
+  <meta name="generator" content="Hugo 0.24.1" />
+  
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="home" href="/">
+            <i class="fa fa-home"></i>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav external pull-right">
+        <li class="nav-item">
+          <a href="https://www.linkedin.com/in/ryanfaerman">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/ryanfaerman">
+            <i class="fa fa-github-alt"></i>
+          </a>
+          <a href="https://www.flickr.com/photos/ryanfaerman/">
+            <i class="fa fa-flickr"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <article>
+    <h1>PHP Twitter Search API</h1>
+    <subtitle>
+      Thu, Dec 23, 2010
+      <aside>341 words · 2 minutes</aside>
+    </subtitle>
+    <p>I&rsquo;ve implemented the twitter search API in a PHP class just for fun. It implements the entire search API as of February 25, 2009. I&rsquo;ve only tested this with PHP 5.2.6 but I am fairly confident that most installations of PHP5 should work just fine. If you try it with PHP4 and it works (or if you have to jigger it) let me know.</p>
+
+<p>You can check out the source code in the github repository: <a href="https://github.com/ryanfaerman/php-twitter-search-api">ryanfaerman/php-twitter-search-api</a></p>
+
+<p>Here are a couple examples (after including the class):</p>
+
+<p>This example makes use of method chaining to create a &ldquo;sentence&rdquo;. Chaining isn&rsquo;t a requirement but I think it works here. What this example does is search for tweets from the user &ldquo;ryanfaerman&rdquo; with the hashtag &ldquo;#flsccc&rdquo;.</p>
+
+<pre><code class="language-php">$search = new TwitterSearch();
+$search-&gt;user_agent = 'phptwittersearch:ryan.faerman@gmail.com';
+
+$results = $search-&gt;from('ryanfaerman')-&gt;with('flsccc')-&gt;results();
+</code></pre>
+
+<p>The user agent is optional, but is recommended. This way the folks over at Twitter know who is hitting their server. I&rsquo;ll be leaving it out in other examples for clarity.</p>
+
+<p>If you want to put in the query during instantiation, you can do that too. Anything that you&rsquo;d use on search.twitter.com can be passed as the argument. This example searches all twitter for any tweets that mention the word &ldquo;monkey&rdquo;.</p>
+
+<pre><code class="language-php">$search = new TwitterSearch('monkey');
+$results = $search-&gt;results();
+</code></pre>
+
+<p>Each time you add another search term, it is appended to the query you are building. Once you get the results, the query is cleared.</p>
+
+<p>This example searches for the last 50 tweets from the user ?darthvader? where he mentions ?storm trooper?.</p>
+
+<pre><code class="language-php">$search-&gt;from('darthvader');
+$search-&gt;contains('storm trooper');
+$results = $search-&gt;rpp(50)-&gt;results();
+</code></pre>
+
+<p>This example searches for any tweets within a 25 mile radius of the provided coordinates.</p>
+
+<pre><code class="language-php">$results = $search-&gt;geocode(40.757929, -73.985506, 25)-&gt;results();
+</code></pre>
+
+<p>There are quite a few more search operators which are clear from the source code, so I encourage you to take a look.
+Lastly, there is the trends function. Calling this method returns the top ten queries that are currently trending on Twitter.</p>
+
+<pre><code class="language-php">$trends = $search-&gt;trends();
+</code></pre>
+
+<p>If you end up using this in a project of yours, I&rsquo;d really enjoy hearing about it.</p>
+
+
+    <hr class="ookiaks" />
+  </article>
+  <footer id="footer">
+    <p>Copyright &copy; Ryan Faerman</p>
+  </footer>
+  <script type="text/javascript" src="https://www.ryanfaerman.com/main.js"></script>
+
+</body>
+</html>
+

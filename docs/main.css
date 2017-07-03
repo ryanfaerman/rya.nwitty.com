@@ -1,0 +1,232 @@
+.header {
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.header-inner {
+    *zoom: 1;
+    max-width: 1400px;
+    margin-left: 12.75%;
+    margin-right: 12.75%;
+    *zoom: 1;
+    height: 100%
+}
+.header-inner:before,
+.header-inner:after {
+    content: " ";
+    display: table
+}
+.header-inner:after {
+    clear: both
+}
+.header-inner:before,
+.header-inner:after {
+    content: " ";
+    display: table
+}
+.header-inner:after {
+    clear: both
+}
+.header-inner a {
+    color: #ddd;
+    display: inline-block;
+    border-bottom: 0px;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 3px;
+    -webkit-transition: color 0.1s linear;
+    -moz-transition: color 0.1s linear;
+    transition: color 0.1s linear
+}
+.header-inner a:hover {
+    color: #fff
+}
+
+.header ul {
+  margin: 0; padding: 0;
+}
+
+.header-inner .nav {
+    display: inline;
+    height: 100%
+}
+.header-inner .nav .nav-item {
+    display: inline-block;
+    height: 100%
+}
+
+.header-inner .nav .nav-item a i {
+    position: relative;
+    top: 2px
+}
+.headroom {
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out
+}
+.headroom--pinned {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%)
+}
+.headroom--unpinned {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%)
+}
+
+.hero {
+    background: url("/ryan_and_ayelet_green.png");
+    background-color: #40526b;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin-left: -15%;
+    margin-top: -8px;
+    margin-bottom: 4em;
+    height: 700px;
+}
+.hero .hero-inner {
+    *zoom: 1;
+    padding: 2em;
+    color: #fffff3;
+}
+.hero .hero-inner:before,
+.hero .hero-inner:after {
+    content: " ";
+    display: table
+}
+.hero .hero-inner:after {
+    clear: both
+}
+
+.hero .hero-inner .hero-copy {
+    padding: 2em;
+    margin-top: 200px;
+    border-radius: 5px;
+    min-width: 300px;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 40.29137%;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.hero .hero-inner .hero-copy h1 {
+    font-size: 1.4em;
+    margin-bottom: .3em;
+}
+.hero .hero-inner .hero-copy p {
+    font-size: 1.1em;
+    width: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 53.75em) {
+    .hero .hero-inner .hero-copy p {
+        font-size: 1.3em
+    }
+}
+
+article {
+    counter-reset: sidenote-counter;
+}
+
+hr.ookiaks, article hr {
+    text-align: center;
+    color: #000;
+    margin-top: 6em;
+    height: 0;
+    border-width: 0;
+    background-color: inherit;
+    width: 55%;
+    margin-right: 45%;
+    clear: both;
+}
+
+article hr {
+    margin-top: 2.4em;
+    margin-bottom: 3em;
+}
+
+article img {
+    border-radius: 3px;
+}
+
+hr.ookiaks::after, article hr::after {
+    content: "··•··";
+    letter-spacing: 2em;
+}
+
+#continued-posts {
+    width: 55%;
+}
+
+#continued-posts .articles::after {
+    clear: both;
+}
+
+#continued-posts .articles::before
+#continued-posts .articles::after, {
+    content: " ";
+    display: display;
+}
+
+#continued-posts .articles {
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+#continued-posts .articles li {
+    width: 50%;
+    float: left;
+}
+
+#continued-posts a {
+    font-size: 1.1rem;
+}
+
+subtitle {
+  width: 55%;
+}
+
+subtitle aside {
+  float: right;
+  clear: right;
+  margin-right: -58%;
+  width: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  vertical-align: baseline;
+  position: relative;
+}
+
+article ol, article ul {
+  width: 55%;
+}
+
+article pre {
+  overflow-x: scroll;
+  width: 85%;
+}
+
+#footer {
+  padding-top: 35px;
+  clear: both;
+}
+
+#footer p {
+  font-size: 16px;
+  width: 100%;
+}
