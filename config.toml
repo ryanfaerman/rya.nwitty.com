@@ -3,4 +3,3 @@ languageCode = "en-us"
 title = "Ryan Faerman"
 theme = "tufte"
 watch = true
-publishDir = "docs"
